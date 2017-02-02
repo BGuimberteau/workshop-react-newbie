@@ -4,15 +4,20 @@ import QuoteData from '../../data/quote.const.js';
 import Button from '../Button/Button';
 import './App.css';
 
+const randomIndex = () => {
+  return Math.floor(Math.random() * QuoteData.length)
+};
 
 class App extends Component {
   state = {
-    theQuote: QuoteData[Math.floor(Math.random() * QuoteData.length)]
+    theQuote: QuoteData[randomIndex()]
   };
 
   nextQuote = () => {
-    this.setState({theQuote: QuoteData[Math.floor(Math.random() * QuoteData.length)]})
+    this.setState({theQuote: QuoteData[randomIndex()]})
   };
+
+
 
   render() {
     return (
